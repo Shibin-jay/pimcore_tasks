@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="product-sec">
+        {% if editmode %}
+            {{ pimcore_relation("product") }}
+        {% else %}
+            {% set product = pimcore_relation("product").element %}
+            {% if product %}
+                <p><strong>{{ product.name }}</strong></p>
+                <p>{{ product.description }}</p>
+                <div class="image-sec">
+                    {{ product.image.thumbnail("product").html | raw }}
+                </div>
+                <p>price: {{ product.price }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
