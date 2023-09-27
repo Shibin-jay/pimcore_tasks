@@ -1,4 +1,7 @@
 {% extends 'layout.html.twig' %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/custom_product.css') }}">
+    {% endblock %}
 {% block content %}
     <div class="product-sec">
         {% if editmode %}
@@ -9,7 +12,7 @@
                 <p><strong>{{ product.name }}</strong></p>
                 <p>{{ product.description }}</p>
                 <div class="image-sec">
-                    {{ product.image.thumbnail("product").html | raw }}
+                    <img src="{{ product.image }}">
                 </div>
                 <p>price: {{ product.price }}</p>
             {% endif %}
