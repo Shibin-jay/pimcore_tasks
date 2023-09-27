@@ -8,8 +8,17 @@ pimcore:
                             -
                                 method: scaleByWidth
                                 arguments:
-                                    width: 550
+                                    width: 250
                                     forceResize: false
+                            -
+                                method: roundCorners
+                                arguments:
+                                    width: 5
+                                    height: 5
+                            -
+                                method: trim
+                                arguments:
+                                    tolerance: 10
                         medias: {  }
                         name: product
                         description: ''
@@ -21,6 +30,6 @@ pimcore:
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1695805398
+                        modificationDate: 1695812454
                         creationDate: 1695805026
                         preserveAnimation: false

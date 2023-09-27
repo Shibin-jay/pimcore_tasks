@@ -19,4 +19,9 @@ class ContentController extends FrontendController
     {
         return  $this->render('content/custom_products.html.twig');
     }
+
+//    public function passingObjectAction(){
+//        $product = DataObject::getById(3);
+//        return $this->render('content/passing_object.html.twig',['product'=>$product]);
+//    }
 }
