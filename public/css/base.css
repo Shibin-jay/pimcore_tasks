@@ -1,0 +1,55 @@
+.banner-sec{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+.right-sec{
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left-sec picture img {
+    width: 720px;
+    height: 480px;
+}
+.page-content{
+    font-size: 18px;
+}
+.page-content h1{
+    font-size: 40px;
+}
+.gallery-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+#renderlet-gallery .my-gallery{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#renderlet-gallery .my-gallery img{
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    border: 10px solid grey;
+    transition-duration: 1s;
+}
+#renderlet-gallery .my-gallery img:hover {
+    border: 5px solid #fff;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-filter: none;
+    filter: none;
+}
+/*.gallery-row{*/
+/*    display: flex;*/
+/*    align-items:center;*/
+/*}*/
