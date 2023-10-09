@@ -5,22 +5,19 @@
  * Variants: no
  *
  * Fields Summary:
- * - name [input]
- * - description [textarea]
- * - image [image]
- * - price [numeric]
- * - location [geopoint]
- * - video [video]
+ * - geoPoint [geopoint]
+ * - geoBound [geobounds]
+ * - geoPolygon [geopolygon]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'product',
+   'id' => '5',
+   'name' => 'Geo',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696719173,
+   'modificationDate' => 1696701459,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -50,7 +47,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'children' => 
     array (
       0 => 
-      Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+      Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -64,117 +61,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'name',
-             'title' => 'Name',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'name' => 'description',
-             'title' => 'Description',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'maxLength' => NULL,
-             'showCharCount' => false,
-             'excludeFromSearchIndex' => false,
-             'height' => '',
-             'width' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'uploadPath' => '',
-             'width' => '',
-             'height' => '',
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => false,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          4 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
-             'name' => 'location',
-             'title' => 'Location',
+             'name' => 'geoPoint',
+             'title' => 'Geo Point',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -197,10 +86,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'height' => 180,
              'width' => '',
           )),
-          5 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Video::__set_state(array(
-             'name' => 'video',
-             'title' => 'Video',
+          1 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Geobounds::__set_state(array(
+             'name' => 'geoBound',
+             'title' => 'Geo Bound',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -216,18 +105,37 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'uploadPath' => '',
-             'allowedTypes' => 
+             'lat' => 0.0,
+             'lng' => 0.0,
+             'zoom' => 1,
+             'mapType' => 'roadmap',
+             'height' => 180,
+             'width' => '',
+          )),
+          2 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Geopolygon::__set_state(array(
+             'name' => 'geoPolygon',
+             'title' => 'Geo Polygon',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
             array (
             ),
-             'supportedTypes' => 
-            array (
-              0 => 'asset',
-              1 => 'youtube',
-              2 => 'vimeo',
-              3 => 'dailymotion',
-            ),
-             'height' => '',
+             'lat' => 0.0,
+             'lng' => 0.0,
+             'zoom' => 1,
+             'mapType' => 'roadmap',
+             'height' => 180,
              'width' => '',
           )),
         ),
@@ -235,10 +143,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
-         'icon' => '',
+         'fieldtype' => 'fieldset',
          'labelWidth' => 100,
          'labelAlign' => 'left',
       )),

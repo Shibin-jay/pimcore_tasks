@@ -10,11 +10,13 @@
             {% set product = pimcore_relation("product").element %}
             {% if product %}
                 <p><strong>{{ product.name }}</strong></p>
-                <p>{{ product.description }}</p>
-                <div class="image-sec">
-                    <img src="{{ product.image }}">
-                </div>
-                <p>price: {{ product.price }}</p>
+                <p>{{ product.desc }}</p>
+{#                {% if product.image %}#}
+{#                    <div class="image-sec">#}
+{#                        <img src="{{ product.image }}">#}
+{#                    </div>#}
+{#                    {% endif %}#}
+{#                <p>price: {{ product.price }}</p>#}
             {% endif %}
         {% endif %}
     </div>

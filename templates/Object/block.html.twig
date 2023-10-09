@@ -1,0 +1,32 @@
+{% block content %}
+
+    <div class="main-sec">
+        <h2>
+            Blocks and attributes
+        </h2>
+        {% for block in firstBlocks %}
+        <div>
+            <h3>Name: {{ block.name.data }}
+            </h3>
+            <p>Description: {{ block.description.data }}</p>
+        </div>
+        {% endfor %}
+        <div class="second-block">
+            {% for block in secondBlock %}
+            <h4>price: {{ block.price.data }}</h4>
+            <p>{{ block.date.data }}</p>
+            <p>{{ block.slideNum.data }}</p>
+
+            {%  endfor %}
+        </div>
+        <div>
+            <h2>created block</h2>
+        </div>
+        {% for block in createdBlock.block %}
+        <h2>Name: {{ block.name.data }}</h2>
+            <p>{{ block.description.data }}</p>
+{#            {{ dump(block.description.data) }}#}
+        {% endfor %}
+    </div>
+
+{% endblock %}

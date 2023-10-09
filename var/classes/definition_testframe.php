@@ -6,21 +6,17 @@
  *
  * Fields Summary:
  * - name [input]
- * - description [textarea]
- * - image [image]
- * - price [numeric]
- * - location [geopoint]
- * - video [video]
+ * - sku [input]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'product',
+   'id' => '11',
+   'name' => 'testframe',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696719173,
+   'modificationDate' => 1696852761,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -94,57 +90,32 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'name' => 'description',
-             'title' => 'Description',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
+          Pimcore\Model\DataObject\ClassDefinition\Layout\Iframe::__set_state(array(
+             'name' => 'iframe',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => '',
+             'width' => 1500,
+             'height' => 500,
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => NULL,
+             'datatype' => 'layout',
+             'children' => 
+            array (
+            ),
              'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'maxLength' => NULL,
-             'showCharCount' => false,
-             'excludeFromSearchIndex' => false,
-             'height' => '',
-             'width' => '',
+             'fieldtype' => 'iframe',
+             'iframeUrl' => '/iframe/summary',
+             'renderingData' => 'sample data',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'uploadPath' => '',
-             'width' => '',
-             'height' => '',
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'sku',
+             'title' => 'Sku',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -161,74 +132,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'defaultValue' => NULL,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
              'unique' => false,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
+             'showCharCount' => false,
              'width' => '',
              'defaultValueGenerator' => '',
-          )),
-          4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
-             'name' => 'location',
-             'title' => 'Location',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'lat' => 0.0,
-             'lng' => 0.0,
-             'zoom' => 1,
-             'mapType' => 'roadmap',
-             'height' => 180,
-             'width' => '',
-          )),
-          5 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Video::__set_state(array(
-             'name' => 'video',
-             'title' => 'Video',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'uploadPath' => '',
-             'allowedTypes' => 
-            array (
-            ),
-             'supportedTypes' => 
-            array (
-              0 => 'asset',
-              1 => 'youtube',
-              2 => 'vimeo',
-              3 => 'dailymotion',
-            ),
-             'height' => '',
-             'width' => '',
           )),
         ),
          'locked' => false,
@@ -254,7 +166,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '',
+   'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/news.svg',
    'group' => '',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',

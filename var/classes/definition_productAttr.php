@@ -6,21 +6,19 @@
  *
  * Fields Summary:
  * - name [input]
- * - description [textarea]
- * - image [image]
- * - price [numeric]
- * - location [geopoint]
- * - video [video]
+ * - desc [textarea]
+ * - objBrick [objectbricks]
+ * - engine [objectbricks]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'product',
+   'id' => '8',
+   'name' => 'productAttr',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696719173,
+   'modificationDate' => 1696721641,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -95,8 +93,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'name' => 'description',
-             'title' => 'Description',
+             'name' => 'desc',
+             'title' => 'Desc',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -119,9 +117,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'name' => 'objBrick',
+             'title' => 'Obj Brick',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -137,98 +135,38 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'uploadPath' => '',
-             'width' => '',
-             'height' => '',
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => false,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
-             'name' => 'location',
-             'title' => 'Location',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'lat' => 0.0,
-             'lng' => 0.0,
-             'zoom' => 1,
-             'mapType' => 'roadmap',
-             'height' => 180,
-             'width' => '',
-          )),
-          5 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Video::__set_state(array(
-             'name' => 'video',
-             'title' => 'Video',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'uploadPath' => '',
              'allowedTypes' => 
             array (
+              0 => 'bikes',
             ),
-             'supportedTypes' => 
+             'maxItems' => NULL,
+             'border' => false,
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'name' => 'engine',
+             'title' => 'Engine',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
             array (
-              0 => 'asset',
-              1 => 'youtube',
-              2 => 'vimeo',
-              3 => 'dailymotion',
             ),
-             'height' => '',
-             'width' => '',
+             'allowedTypes' => 
+            array (
+              0 => 'common',
+            ),
+             'maxItems' => NULL,
+             'border' => false,
           )),
         ),
          'locked' => false,

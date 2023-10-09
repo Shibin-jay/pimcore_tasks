@@ -1,0 +1,20 @@
+<div>
+{#    {% if editmode %}#}
+{#    {{ pimcore_relations("testRoom") }}#}
+{#    {% else %}#}
+{#    {% endif %}#}
+
+    {% for group in items %}
+        <h2>{{ group.groupName }}</h2>
+        <ul>
+            {% for key in group.keys %}
+                <li>{{ key.name }}: {{ key.value }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+</div>
+
+{#<div>#}
+{#    {{ dump(items) }}#}
+{#</div>#}

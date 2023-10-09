@@ -21,6 +21,10 @@
                 {% if product %}
                     <p><strong>{{ product.name }}</strong></p>
                     <p>{{ product.description }}</p>
+                    <h4>longitude:{{ product.location.longitude }}</h4>
+                    <h4>latitude:{{ product.location.latitude }}</h4>
+
+{#                    {{ dump(product) }}#}
                     <div class="image-sec">
                         <img src="{{ product.image }}">
                     </div>
@@ -209,12 +213,12 @@
 
 
     </div>
-    <div class="scedule-sec">
-        {% for i in pimcore_scheduledblock('scheduleBlock').iterator %}
+{#    <div class="scedule-sec">#}
+{#        {% for i in pimcore_scheduledblock('scheduleBlock').iterator %}#}
 {#            <h2>{{ pimcore_input('blockinput') }}</h2>#}
-            <p>{{ pimcore_input('blockinput') }}</p>
-        {% endfor %}
-    </div>
+{#            <p>{{ pimcore_input('blockinput') }}</p>#}
+{#        {% endfor %}#}
+{#    </div>#}
     <div class="custom-brick">
         {{ pimcore_areablock("myAreablock") }}
     </div>

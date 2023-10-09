@@ -30,6 +30,7 @@ parameters:
     #pimcore_executable_dot: /usr/bin/dot
 
 services:
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
