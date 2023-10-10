@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\Asset;
 use Pimcore\Model\DataObject;
@@ -17,10 +18,12 @@ class ObjectController extends  FrontendController
         $secondBlock = $object->getCustom();
         $item = $secondBlock[0];
         $item2 =$item["date"]->setData(time());
-
         $createdBlock = $this->CreateBlockAction();
+
         return $this->render('Object/block.html.twig',['firstBlocks'=>$firstBlock, 'secondBlock'=>$secondBlock,'createdBlock'=>$createdBlock]);
     }
+
+
     public function CreateBlockAction(){
         $object = DataObject::getById(2);
         $data=[
@@ -169,4 +172,39 @@ class ObjectController extends  FrontendController
         }
         return $this->render('Object\store.html.twig', ['items' => $classificationStoreData]);
     }
+
+    public function CreateVariantAction()
+    {
+        $obj = new DataObject\Guest();
+        $obj->setParent(DataObject\Guest::getById(92));
+        $obj->setKey("testvariant26");
+        $obj->setName("test name");
+        $obj->setAddress('testaddress');
+        $obj->setAge(23);
+        $obj->setEmail('test@gmail.com');
+        $obj->setType(DataObject::OBJECT_TYPE_VARIANT);
+//        $obj->save();
+
+        return $this->render('Object/default.html.twig',['items'=>$obj]);
+    }
+    public function lockAction(Request $request){
+        $class = DataObject\ClassDefinition::getById(15);
+        $fields = $class->getFieldDefinitions();
+
+        foreach ($fields as $field) {
+            $field->setLocked(false);
+        }
+
+        $class->save();
+        return $this->render('Object/default.html.twig',['items'=>$class]);
+    }
+
+    /*
+//     *@Route("{path}
+//     */
+//    public function previewAction(){
+//
+//    }
+
+
 }

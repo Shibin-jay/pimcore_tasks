@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject;
+use Pimcore\Model\Document\Link;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +18,8 @@ class ContentController extends FrontendController
 
     public function customProductsAction():Response
     {
-        return  $this->render('content/custom_products.html.twig');
+        $link = Link::getById(15)->getHref();
+        return  $this->render('content/custom_products.html.twig',['link'=>$link]);
     }
 
 //    public function passingObjectAction(){

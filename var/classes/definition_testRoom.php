@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Inheritance: no
+ * Inheritance: yes
  * Variants: no
  *
  * Fields Summary:
@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696848904,
+   'modificationDate' => 1696911714,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -28,7 +28,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-   'allowInherit' => false,
+   'allowInherit' => true,
    'allowVariants' => false,
    'showVariants' => false,
    'layoutDefinitions' => 
@@ -141,29 +141,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'width' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Iframe::__set_state(array(
-             'name' => 'iframe',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Frame',
-             'width' => 1500,
-             'height' => 800,
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => NULL,
-             'datatype' => 'layout',
-             'children' => 
-            array (
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'iframe',
-             'iframeUrl' => '/iframe/summary',
-             'renderingData' => 'sample data',
           )),
         ),
          'locked' => false,
