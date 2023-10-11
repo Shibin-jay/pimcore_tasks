@@ -16,10 +16,11 @@ class ContentController extends FrontendController
         return [];
     }
 
-    public function customProductsAction():Response
+    public function customProductsAction(Request $request):Response
     {
+        $locale = $request->getLocale();
         $link = Link::getById(15)->getHref();
-        return  $this->render('content/custom_products.html.twig',['link'=>$link]);
+        return  $this->render('content/custom_products.html.twig',['link'=>$link, 'locale'=>$locale]);
     }
 
 //    public function passingObjectAction(){

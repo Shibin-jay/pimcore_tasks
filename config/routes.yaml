@@ -4,3 +4,7 @@ _pimcore:
 app:
     resource: "../src/Controller/"
     type: annotation
+
+asset_create_image:
+    path: /asset/create;
+    controller: 'AppBundle\Controller\AssetController::createImageAction'

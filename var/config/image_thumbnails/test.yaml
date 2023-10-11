@@ -1,0 +1,46 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    test:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 640
+                                    height: 640
+                            -
+                                method: applyMask
+                                arguments:
+                                    path: ''
+                            -
+                                method: setBackgroundColor
+                                arguments:
+                                    color: '#C1D8C3'
+                            -
+                                method: crop
+                                arguments:
+                                    width: 640
+                                    height: 640
+                                    x: 0
+                                    'y': 131
+                            -
+                                method: roundCorners
+                                arguments:
+                                    width: 10
+                                    height: 10
+                        medias: {  }
+                        name: test
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1697009311
+                        creationDate: 1697000124
+                        preserveAnimation: false

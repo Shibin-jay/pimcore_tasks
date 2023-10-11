@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\Asset;
@@ -9,6 +11,7 @@ use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\Data\BlockElement;
 use Pimcore\Model\Document;
 use Pimcore\Model\DataObject\TestRoom;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ObjectController extends  FrontendController
 {
@@ -205,6 +208,34 @@ class ObjectController extends  FrontendController
 //    public function previewAction(){
 //
 //    }
+
+
+
+    #[Route('/products/{sku}', name: 'show')]
+    public function show($sku): JsonResponse|Response
+    {
+        $prodListing = new DataObject\Product\Listing();
+        $prodListing->setCondition('sku = ?', [$sku]);
+        $prodListing->load();
+
+        $product = $prodListing->current();
+
+        if ($product instanceof DataObject\Product) {
+            // Product found
+            return $this->render('Asset/preview.html.twig', ['items' => $product]);
+        } else {
+            // Product not found
+            return new JsonResponse(['message' => 'Product not found'], 404);
+        }
+
+//        return $this->render('Asset/preview.html.twig', ['items' => $product]);
+//        if ($prod instanceof DataObject\Product) {
+//            $sku = $prod->getSku();
+//            return $this->render('Asset/default.html.twig', ['items' => $prod]);
+//        } else {
+//            return new JsonResponse(['message' => 'Room not found'], 404);
+//        }
+    }
 
 
 }

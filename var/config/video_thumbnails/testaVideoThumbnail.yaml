@@ -1,0 +1,21 @@
+pimcore:
+    assets:
+        video:
+            thumbnails:
+                definitions:
+                    testaVideoThumbnail:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 640
+                                    height: 640
+                                    displayfield-1823-inputEl: "<small style='color: red;'>width and height must be an even number</small>"
+                        medias: {  }
+                        name: testaVideoThumbnail
+                        description: ''
+                        group: ''
+                        videoBitrate: null
+                        audioBitrate: null
+                        modificationDate: 1697021957
+                        creationDate: 1697020928

@@ -1,0 +1,11 @@
+<div>
+    <h2>{{ items.name }}</h2>
+    <p>Sku: {{ items.sku }}</p>
+    <p>Description: {{ items.description }}</p>
+    <p>Price: ${{ items.price }}</p>
+
+    {% if items.image is not null %}
+        {% set imagePath = items.image.path ~ items.image.filename %}
+        <img src="{{ imagePath }}" alt="{{ items.name }}">
+    {% endif %}
+</div>

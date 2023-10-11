@@ -21,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1696943008,
+   'modificationDate' => 1697033614,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -78,8 +78,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'fieldtype' => '',
              'relationType' => false,
              'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
              'blockedVarsForExport' => 
             array (
             ),

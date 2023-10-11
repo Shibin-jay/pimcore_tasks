@@ -14,15 +14,14 @@ class ProductLinkGenerator implements LinkGeneratorInterface
         $sku = $object->getSku();
         $name = $object->getName();
 
-        $slug = $this->doGenerate($sku, $name);
+//        $slug = $this->doGenerate($sku, $name);
 
-        return ('/products/'.$slug);
+        return ('/products/'.$sku);
     }
     public function doGenerate($sku, $name)
     {
         $urlFriendlyString = strtolower(str_replace(' ', '-', $name));
         return strtolower( $sku . '/'. $urlFriendlyString);
-
     }
 }
 

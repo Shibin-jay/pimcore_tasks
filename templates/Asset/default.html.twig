@@ -1,0 +1,31 @@
+<div>
+    <h3>{{ asset.getMetaData('title') }}</h3>
+    {% set fullFileURL = asset.path ~ asset.filename %}
+    {%  if asset.type == "image" %}
+    {{ pimcore_asset_by_path(fullFileURL).thumbnail('product').html({
+        'imgAttributes': {
+            'class': 'thumbnail-class',
+    }
+    })|raw }}
+    {% elseif asset.type=="video" %}
+        <video width="640" height="360" controls>
+            <source src="{{ fullFileURL }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+{#        {% if editmode %}#}
+{#            {{ pimcore_video('fullFileURL', {#}
+{#                width: 540,#}
+{#                height: 540,#}
+{#                thumbnail: 'videoCard'#}
+{#            }) }}#}
+{#        {% else %}#}
+
+
+    {% endif %}
+    <p>engine capacity:{{ asset.getMetadata('price') }}</p>
+</div>
+
+<div>
+    {{ dump(asset) }}
+</div>
