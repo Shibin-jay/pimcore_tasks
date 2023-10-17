@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Inheritance: yes
+ * Inheritance: no
  * Variants: no
  *
  * Fields Summary:
- * - store [classificationstore]
- * - room [manyToOneRelation]
- * - customer [manyToManyObjectRelation]
+ * - name [input]
+ * - user [user]
+ * - location [geopoint]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '9',
-   'name' => 'testRoom',
+   'id' => '16',
+   'name' => 'member',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1697448102,
+   'modificationDate' => 1697540560,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -29,7 +29,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-   'allowInherit' => true,
+   'allowInherit' => false,
    'allowVariants' => false,
    'showVariants' => false,
    'layoutDefinitions' => 
@@ -47,7 +47,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'children' => 
     array (
       0 => 
-      Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
+      Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -61,9 +61,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
-             'name' => 'store',
-             'title' => 'Store',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -79,32 +79,21 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'children' => 
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
             array (
             ),
-             'labelWidth' => 0,
-             'localized' => true,
-             'storeId' => 1,
-             'hideEmptyData' => false,
-             'disallowAddRemove' => false,
-             'referencedFields' => 
-            array (
-            ),
-             'fieldDefinitionsCache' => NULL,
-             'allowedGroupIds' => 
-            array (
-            ),
-             'activeGroupDefinitions' => 
-            array (
-            ),
-             'maxItems' => NULL,
-             'height' => NULL,
-             'width' => NULL,
+             'unique' => false,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'name' => 'room',
-             'title' => 'Room',
+          Pimcore\Model\DataObject\ClassDefinition\Data\User::__set_state(array(
+             'name' => 'user',
+             'title' => 'User',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -113,41 +102,28 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'fieldtype' => '',
-             'relationType' => true,
+             'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'room',
-              ),
-            ),
-             'displayMode' => 'grid',
-             'pathFormatterClass' => '',
-             'assetInlineDownloadAllowed' => false,
-             'assetUploadPath' => '',
-             'allowToClearRelation' => true,
-             'objectsAllowed' => true,
-             'assetsAllowed' => false,
-             'assetTypes' => 
-            array (
-            ),
-             'documentsAllowed' => false,
-             'documentTypes' => 
-            array (
-            ),
-             'width' => '',
+             'options' => NULL,
+             'defaultValue' => NULL,
+             'optionsProviderClass' => NULL,
+             'optionsProviderData' => NULL,
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
+             'width' => NULL,
+             'unique' => false,
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'name' => 'customer',
-             'title' => 'Customer',
-             'tooltip' => '',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
+             'name' => 'location',
+             'title' => 'Location',
+             'tooltip' => 'location',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
@@ -155,42 +131,29 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'fieldtype' => '',
-             'relationType' => true,
+             'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'customer',
-              ),
-            ),
-             'displayMode' => 'grid',
-             'pathFormatterClass' => '',
-             'maxItems' => NULL,
-             'visibleFields' => 
-            array (
-            ),
-             'allowToCreateNewObject' => false,
-             'allowToClearRelation' => true,
-             'optimizedAdminLoading' => false,
-             'enableTextSelection' => false,
-             'visibleFieldDefinitions' => 
-            array (
-            ),
+             'lat' => 0.0,
+             'lng' => 0.0,
+             'zoom' => 1,
+             'mapType' => 'roadmap',
+             'height' => 180,
              'width' => '',
-             'height' => '',
           )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
         array (
         ),
-         'fieldtype' => 'fieldset',
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
+         'icon' => '',
          'labelWidth' => 100,
          'labelAlign' => 'left',
       )),

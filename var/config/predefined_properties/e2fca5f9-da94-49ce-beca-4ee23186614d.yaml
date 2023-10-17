@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                e2fca5f9-da94-49ce-beca-4ee23186614d:
+                    name: obj_preprop
+                    description: ''
+                    key: obj2_key
+                    type: object
+                    data: ''
+                    config: ''
+                    ctype: document
+                    inheritable: false
+                    creationDate: 1697191540
+                    modificationDate: 1697191802

@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                223a62cc-6de2-4f2d-a501-3a88542cdcd2:
+                    name: Is_delected
+                    description: delete
+                    key: new_key
+                    type: bool
+                    data: '0'
+                    config: ''
+                    ctype: document
+                    inheritable: false
+                    creationDate: 1697188124
+                    modificationDate: 1697189782

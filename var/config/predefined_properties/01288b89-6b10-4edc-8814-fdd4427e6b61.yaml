@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                01288b89-6b10-4edc-8814-fdd4427e6b61:
+                    name: test_asset
+                    description: ''
+                    key: new_key
+                    type: text
+                    data: '555'
+                    config: ''
+                    ctype: asset
+                    inheritable: false
+                    creationDate: 1697189794
+                    modificationDate: 1697190676

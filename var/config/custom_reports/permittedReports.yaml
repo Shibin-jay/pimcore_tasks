@@ -1,0 +1,94 @@
+pimcore_custom_reports:
+    definitions:
+        permittedReports:
+            name: permittedReports
+            sql: ''
+            dataSourceConfig:
+                -
+                    sql: '*'
+                    from: website_settings
+                    where: ''
+                    groupby: ''
+                    type: sql
+            columnConfiguration:
+                -
+                    name: id
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-1
+                -
+                    name: name
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-2
+                -
+                    name: type
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-3
+                -
+                    name: data
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-4
+                -
+                    name: language
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-5
+                -
+                    name: siteId
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-6
+                -
+                    name: creationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-7
+                -
+                    name: modificationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel5383-8
+            niceName: AdminReports
+            group: ''
+            groupIconClass: ''
+            iconClass: ''
+            menuShortcut: true
+            reportClass: ''
+            chartType: ''
+            pieColumn: null
+            pieLabelColumn: null
+            xAxis: null
+            yAxis: {  }
+            modificationDate: 1697457896
+            creationDate: 1697457812
+            shareGlobally: false
+            sharedUserNames:
+                - admin
+            sharedRoleNames: {  }

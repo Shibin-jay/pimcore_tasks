@@ -1,0 +1,8 @@
+monolog:
+    handlers:
+        custom_handler:
+            level:    debug
+            type:     stream
+            path:     '%kernel.logs_dir%/custom.log'
+            channels: [custom_log]
+    channels: [custom_log]

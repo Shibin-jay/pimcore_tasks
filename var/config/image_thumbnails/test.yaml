@@ -8,8 +8,8 @@ pimcore:
                             -
                                 method: resize
                                 arguments:
-                                    width: 640
-                                    height: 640
+                                    width: 150
+                                    height: 1501
                             -
                                 method: applyMask
                                 arguments:
@@ -41,6 +41,6 @@ pimcore:
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1697009311
+                        modificationDate: 1697179816
                         creationDate: 1697000124
                         preserveAnimation: false
