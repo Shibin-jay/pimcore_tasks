@@ -9,6 +9,6 @@ asset_create_image:
     path: /asset/create;
     controller: 'AppBundle\Controller\AssetController::createImageAction'
 
-my_custom_admin_entry_point:
-    path: /my-custom-login-page
-    controller: Pimcore\Bundle\CoreBundle\Controller\PublicServicesController::customAdminEntryPointAction
+#my_custom_admin_entry_point:
+#    path: /my-custom-login-page
+#    controller: Pimcore\Bundle\CoreBundle\Controller\PublicServicesController::customAdminEntryPointAction

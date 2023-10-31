@@ -40,4 +40,18 @@ class AdaptiveController extends FrontendController
         return $this->render('test\test.html.twig',['item'=>$object]);
 
     }
+    public function overAction()
+    {
+        $obj = DataObject\Guest::getById(86);
+        $obj->setAddress('custom Address');
+
+        return $this->render('test\test.html.twig',['item'=>$obj->getAddress()]);
+    }
+    public function parentAction()
+    {
+        $obj = DataObject\Concrete::getById(100);
+//        $obj->;
+
+        return $this->render('test\test.html.twig',['item'=>$obj]);
+    }
 }

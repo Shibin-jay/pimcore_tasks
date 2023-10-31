@@ -17,11 +17,11 @@
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
    'id' => '1',
-   'name' => 'product',
+   'name' => 'product2',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1697033614,
+   'modificationDate' => 1697711442,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',

@@ -35,6 +35,21 @@ services:
             $customLogLogger: '@monolog.logger.custom_log'
 
 
+
+    App\EventListener\SampleListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.document.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.asset.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.document.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.dataobject.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.asset.preAdd, method: onPreAdd}
+            - { name: kernel.event_listener, event: pimcore.document.preAdd, method: onPreAdd}
+            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: onPreAdd}
+
+
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services

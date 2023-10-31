@@ -5,4 +5,12 @@ monolog:
             type:     stream
             path:     '%kernel.logs_dir%/custom.log'
             channels: [custom_log]
-    channels: [custom_log]
+
+        custom_backend_activity:
+            level: info
+            type: stream
+            path: '%kernel.logs_dir%/customBackend.log'
+            channels: [admin_statistics]
+
+    channels: [custom_log,admin_statistics]
+

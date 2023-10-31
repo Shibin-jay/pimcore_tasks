@@ -1,0 +1,5 @@
+custom_log:
+    resource: "@customLogBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+
