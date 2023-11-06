@@ -12,5 +12,7 @@ return [
     TestBundle\TestBundle::class => ['all' => true],
     ProductsBundle\ProductsBundle::class=>['all' => true],
     customLogBundle\customLogBundle::class => ['all' => true],
+    customConfigBundle\customConfigBundle::class => ['all' => true],
+    customCommandBundle\customCommandBundle::class => ['all' => true],
     //Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
 ];

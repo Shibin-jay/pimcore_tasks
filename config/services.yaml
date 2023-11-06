@@ -80,6 +80,10 @@ services:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
 
+    customCommandBundle\Command\CsvImportObjectsCommand:
+        tags: [ 'console.command' ]
+
+
 
 
     # Example custom templating helper

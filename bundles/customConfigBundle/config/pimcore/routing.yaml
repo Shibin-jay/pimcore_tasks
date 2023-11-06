@@ -1,0 +1,5 @@
+custom_config:
+    resource: "@customConfigBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

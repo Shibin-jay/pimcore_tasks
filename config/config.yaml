@@ -17,7 +17,8 @@ pimcore:
             - src/TestBundle
             - bundles/ProductsBundle
             - bundles/customLogBundle
-
+            - bundles/customConfigBundle
+            - bundles/customCommandBundle
 
 
 # IMPORTANT Notice!

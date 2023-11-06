@@ -1,0 +1,5 @@
+custom_command:
+    resource: "@customCommandBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

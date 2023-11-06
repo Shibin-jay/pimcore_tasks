@@ -59,8 +59,7 @@ class CustomLogListener implements EventSubscriberInterface
         $logEntry->setTimestamp($formattedTimestamp);
         $logEntry->setAdminUserId($user ? $user->getId() : 'NA');
         $logEntry->setController($request->attributes->get('_controller'));
-        $logEntry->save();
-
+//        $logEntry->save(); //due to excessive save its off
 //        if (strpos($request->getPathInfo(), '/admin') !== false) {
 //            $action = $this->determineAction($request);
             $this->customLogActivity($request);

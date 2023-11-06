@@ -36,7 +36,9 @@
       "App\\Tests\\": "tests/",
       "TestBundle\\": "src/TestBundle/src",
       "ProductsBundle\\": "bundles/ProductsBundle/src",
-      "customLogBundle\\": "bundles/customLogBundle/src"
+      "customLogBundle\\": "bundles/customLogBundle/src",
+      "customConfigBundle\\": "bundles/customConfigBundle/src",
+      "customCommandBundle\\": "bundles/customCommandBundle/src"
     }
   },
   "scripts": {
