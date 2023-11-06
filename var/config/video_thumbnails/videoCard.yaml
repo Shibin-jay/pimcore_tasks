@@ -1,0 +1,21 @@
+pimcore:
+    assets:
+        video:
+            thumbnails:
+                definitions:
+                    videoCard:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 540
+                                    height: 540
+                                    displayfield-1836-inputEl: "<small style='color: red;'>width and height must be an even number</small>"
+                        medias: {  }
+                        name: videoCard
+                        description: ''
+                        group: ''
+                        videoBitrate: null
+                        audioBitrate: null
+                        modificationDate: 1697021980
+                        creationDate: 1697020941

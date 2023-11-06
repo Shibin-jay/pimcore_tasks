@@ -1,0 +1,14 @@
+{{ dump(items) }}
+{{ dump(recent) }}
+
+{#<h2>default value</h2>#}
+{#{{ dump(document.getProperty('test_key')) }}#}
+{#{{ pimcore_image("myImage", {"thumbnail": "logo"}) }}#}
+{#<div>#}
+{#    {{ dump(document.getProperty('obj2_key')) }}#}
+{#</div>#}
+
+<h1>
+    {{ pimcore_website_config('googleMapsKey', 'NOT SET') }}
+</h1>
+{{ dump(pimcore_website_config('hi','Not set','en')) }}

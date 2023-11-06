@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                fa0bc474-b33e-4b38-9062-abf967c5862a:
+                    name: obj_prop
+                    description: ahbdc
+                    key: obj_key
+                    type: select
+                    data: ''
+                    config: "\t/john,/jk,/adil"
+                    ctype: object
+                    inheritable: false
+                    creationDate: 1697189519
+                    modificationDate: 1697189721

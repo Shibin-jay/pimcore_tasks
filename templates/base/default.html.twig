@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+
+    {% endblock %}
+{% block content %}
+    <div id="main-content" class="main-content" >
+        <div class="banner-sec">
+            <div class="right-sec">
+                <div class="page-content">
+                    {% set myBlock = pimcore_block('contentblock', {'reload': true}) %}
+                    {% for i in myBlock.iterator %}
+                        {% if myBlock.current > 0 %}
+                            {#                    <br />#}
+                            <br />
+                        {% endif %}
+                        <h1>{{ pimcore_input('headline', {'placeholder':'Headline'}) }}</h1>
+                        {{ pimcore_wysiwyg('content') }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="left-sec">
+                {{ pimcore_image("banner-img", {
+                    "title": "Drag your image here ",
+                    "width": 720,
+                    "height": 500,
+                }) }}
+            </div>
+        </div>
+        <div class="gallery-head">
+            <h1>{{ pimcore_input('headline', {'placeholder':'Headline'}) }}</h1>
+        </div>
+        <section id="renderlet-gallery">
+            {{
+            pimcore_renderlet('myGallery', {
+                "controller" : "App\\Controller\\BaseController::myGalleryAction",
+                "title" : "Drag an asset folder here to get a gallery",
+                "height" : 500
+            })
+            }}
+        </section>
+    </div>
+{% endblock %}

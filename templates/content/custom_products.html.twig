@@ -9,13 +9,35 @@
         {% else %}
             {% set product = pimcore_relation("product").element %}
             {% if product %}
-                <p><strong>{{ product.name }}</strong></p>
+                <p><strong>{{ product.name|trans }}</strong></p>
                 <p>{{ product.description }}</p>
-                <div class="image-sec">
-                    <img src="{{ product.image }}">
-                </div>
+                {% if product.image %}
+                    <div class="image-sec">
+                        <img src="{{ product.image }}">
+                    </div>
+                    {% endif %}
                 <p>price: {{ product.price }}</p>
+                <h4><a href="#">
+                        {{ link }}
+                    </a></h4>
             {% endif %}
         {% endif %}
+    </div>
+    <div>
+        local language: {{ locale }}
+        <div>
+            {% set option1Translation = "Option One"|trans({}, 'admin', pimcore_editmode_admin_language()) %}
+            {% set option2Translation = "Option Two"|trans({}, 'admin', pimcore_editmode_admin_language()) %}
+            {% set option3Translation = "Option Three"|trans({}, 'admin', pimcore_editmode_admin_language()) %}
+
+            {{ pimcore_select("select", {
+                "store": [
+                    ["option1", option1Translation],
+                    ["option2", option2Translation],
+                    ["option3", option3Translation]
+                ]
+            }) }}
+
+        </div>
     </div>
 {% endblock %}

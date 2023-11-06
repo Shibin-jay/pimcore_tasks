@@ -1,0 +1,268 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                89bd826c-5246-4788-aeb2-f967280ebd4c:
+                    id: 89bd826c-5246-4788-aeb2-f967280ebd4c
+                    name: customer
+                    description: ''
+                    creationDate: 1696852991
+                    modificationDate: 1696853165
+                    userOwner: 2
+                    classId: '2'
+                    layoutDefinitions:
+                        name: pimcore_root
+                        type: null
+                        region: null
+                        title: null
+                        width: 0
+                        height: 0
+                        collapsible: false
+                        collapsed: false
+                        bodyStyle: null
+                        datatype: layout
+                        children:
+                            -
+                                name: Layout
+                                type: null
+                                region: null
+                                title: ''
+                                width: ''
+                                height: ''
+                                collapsible: false
+                                collapsed: false
+                                bodyStyle: ''
+                                datatype: layout
+                                children:
+                                    -
+                                        name: block
+                                        title: Block
+                                        tooltip: ''
+                                        mandatory: false
+                                        noteditable: false
+                                        index: false
+                                        locked: false
+                                        style: ''
+                                        permissions: null
+                                        fieldtype: block
+                                        relationType: false
+                                        invisible: false
+                                        visibleGridView: false
+                                        visibleSearch: false
+                                        lazyLoading: false
+                                        disallowAddRemove: false
+                                        disallowReorder: false
+                                        collapsible: false
+                                        collapsed: false
+                                        maxItems: null
+                                        styleElement: ''
+                                        children:
+                                            -
+                                                name: name
+                                                title: Name
+                                                tooltip: ''
+                                                mandatory: false
+                                                noteditable: false
+                                                index: false
+                                                locked: false
+                                                style: ''
+                                                permissions: null
+                                                fieldtype: input
+                                                relationType: false
+                                                invisible: false
+                                                visibleGridView: false
+                                                visibleSearch: false
+                                                defaultValue: null
+                                                columnLength: 190
+                                                regex: ''
+                                                regexFlags: {  }
+                                                unique: false
+                                                showCharCount: false
+                                                width: ''
+                                                defaultValueGenerator: ''
+                                                datatype: data
+                                            -
+                                                name: description
+                                                title: Description
+                                                tooltip: ''
+                                                mandatory: false
+                                                noteditable: false
+                                                index: false
+                                                locked: false
+                                                style: ''
+                                                permissions: null
+                                                fieldtype: textarea
+                                                relationType: false
+                                                invisible: false
+                                                visibleGridView: false
+                                                visibleSearch: false
+                                                maxLength: null
+                                                showCharCount: false
+                                                excludeFromSearchIndex: false
+                                                height: ''
+                                                width: ''
+                                                datatype: data
+                                        layout: null
+                                        datatype: data
+                                    -
+                                        name: custom
+                                        title: Custom
+                                        tooltip: ''
+                                        mandatory: false
+                                        noteditable: true
+                                        index: false
+                                        locked: false
+                                        style: ''
+                                        permissions: null
+                                        fieldtype: block
+                                        relationType: false
+                                        invisible: false
+                                        visibleGridView: false
+                                        visibleSearch: false
+                                        lazyLoading: false
+                                        disallowAddRemove: false
+                                        disallowReorder: false
+                                        collapsible: false
+                                        collapsed: false
+                                        maxItems: null
+                                        styleElement: ''
+                                        children:
+                                            -
+                                                name: price
+                                                title: Price
+                                                tooltip: ''
+                                                mandatory: false
+                                                noteditable: false
+                                                index: false
+                                                locked: false
+                                                style: ''
+                                                permissions: null
+                                                fieldtype: numeric
+                                                relationType: false
+                                                invisible: false
+                                                visibleGridView: false
+                                                visibleSearch: false
+                                                defaultValue: null
+                                                integer: false
+                                                unsigned: false
+                                                minValue: null
+                                                maxValue: null
+                                                unique: false
+                                                decimalSize: null
+                                                decimalPrecision: null
+                                                width: ''
+                                                defaultValueGenerator: ''
+                                                datatype: data
+                                            -
+                                                name: date
+                                                title: Date
+                                                tooltip: ''
+                                                mandatory: false
+                                                noteditable: false
+                                                index: false
+                                                locked: false
+                                                style: ''
+                                                permissions: null
+                                                fieldtype: date
+                                                relationType: false
+                                                invisible: false
+                                                visibleGridView: false
+                                                visibleSearch: false
+                                                defaultValue: null
+                                                useCurrentDate: false
+                                                columnType: bigint(20)
+                                                defaultValueGenerator: ''
+                                                datatype: data
+                                            -
+                                                name: slideNum
+                                                title: 'Slide Num'
+                                                tooltip: ''
+                                                mandatory: false
+                                                noteditable: false
+                                                index: false
+                                                locked: false
+                                                style: ''
+                                                permissions: null
+                                                fieldtype: slider
+                                                relationType: false
+                                                invisible: false
+                                                visibleGridView: false
+                                                visibleSearch: false
+                                                minValue: 2
+                                                maxValue: 10
+                                                vertical: false
+                                                increment: null
+                                                decimalPrecision: null
+                                                height: ''
+                                                width: ''
+                                                datatype: data
+                                        layout: null
+                                        datatype: data
+                                    -
+                                        name: structTable
+                                        title: 'Struct Table'
+                                        tooltip: ''
+                                        mandatory: false
+                                        noteditable: false
+                                        index: false
+                                        locked: false
+                                        style: ''
+                                        permissions: null
+                                        fieldtype: structuredTable
+                                        relationType: false
+                                        invisible: false
+                                        visibleGridView: false
+                                        visibleSearch: false
+                                        labelWidth: 0
+                                        labelFirstCell: ''
+                                        cols:
+                                            -
+                                                position: 1
+                                                key: price
+                                                label: price
+                                                type: text
+                                            -
+                                                type: text
+                                                position: 2
+                                                label: resources
+                                                key: resources
+                                            -
+                                                type: text
+                                                position: 3
+                                                key: locations
+                                                label: locations
+                                        rows:
+                                            -
+                                                position: 1
+                                                key: premium
+                                                label: premium
+                                            -
+                                                position: 2
+                                                key: casual
+                                                label: Casual
+                                            -
+                                                position: 3
+                                                key: basic
+                                                label: basic
+                                            -
+                                                position: 4
+                                                key: kl
+                                                label: kl
+                                        height: ''
+                                        width: ''
+                                        datatype: data
+                                locked: false
+                                fieldtype: panel
+                                layout: null
+                                border: false
+                                icon: ''
+                                labelWidth: 100
+                                labelAlign: left
+                        locked: false
+                        fieldtype: panel
+                        layout: null
+                        border: false
+                        icon: null
+                        labelWidth: 100
+                        labelAlign: left
+                    default: 0

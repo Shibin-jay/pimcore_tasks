@@ -1,0 +1,26 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    logo:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 200
+                                    height: 27
+                        medias: {  }
+                        name: logo
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1695910170
+                        creationDate: 1695910138
+                        preserveAnimation: false

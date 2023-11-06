@@ -1,0 +1,10 @@
+<div>
+    <h3>{{ items.name }}</h3>
+    <p>
+        {{ items.description }}
+        <br>
+        {{ items.price }}
+    </p>
+    <video src="{{ items.video.data }}" poster="{{ items.video.data }}"></video>
+    {{ dump(items) }}
+</div>

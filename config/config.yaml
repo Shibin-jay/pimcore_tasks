@@ -1,13 +1,30 @@
 imports:
     - { resource: 'local/' }
-
+pimcore_admin:
+    custom_admin_path_identifier: min20CharCustomToken
 
 pimcore:
+    documents:
+        auto_save_interval: 60
+    objects:
+        auto_save_interval: 60
+    models:
+        class_overrides:
+            'Pimcore\Model\DataObject\Guest': 'App\Model\DataObject\Guest'
+
+    bundles:
+        search_paths:
+            - src/TestBundle
+            - bundles/ProductsBundle
+            - bundles/customLogBundle
+            - bundles/customConfigBundle
+            - bundles/customCommandBundle
+
 
 # IMPORTANT Notice!
 # Following there are only some examples listed, for a full list of possible options, please run the following command:
 # ./bin/console debug:config pimcore
-# you can also filter them by path, eg.
+# you can also filter them by path,
 # ./bin/console debug:config pimcore assets
 # or even more specific:
 # ./bin/console debug:config pimcore assets.image
@@ -98,6 +115,7 @@ pimcore:
 #        archive_treshold: '30'
 #        archive_alternative_database: ''
 
+
 #### SYMFONY OVERRIDES
 framework:
 
@@ -133,4 +151,6 @@ framework:
 #     return:
 #         name: ''
 #         email: ''
-
+doctrine_migrations:
+    migrations_paths:
+        'App\Migrations': '%kernel.project_dir%/src/Migrations'

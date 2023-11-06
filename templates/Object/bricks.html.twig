@@ -1,0 +1,18 @@
+{#{{ dump(item) }}#}
+
+<div>
+    <h4>{{ item.name }}</h4>
+    <p>{{ item.desc }}</p>
+</div>
+<div>
+   <h5>
+       {{ item.objbrick.bikes.name }}
+   </h5>
+    {% set manufactureDate = item.objbrick.bikes.manufacureDate %}
+    {{ manufactureDate.format('Y-m-d') }}
+</div>
+<div>
+    <p>{{ item.engine.common.lang }}</p>
+    <br>
+    <p>{{ item.engine.common.unik }}</p>
+</div>

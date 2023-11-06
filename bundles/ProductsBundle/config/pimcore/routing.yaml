@@ -1,0 +1,5 @@
+test:
+    resource: "@ProductsBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

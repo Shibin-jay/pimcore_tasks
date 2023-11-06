@@ -5,20 +5,24 @@
  * Variants: no
  *
  * Fields Summary:
- * - name [input]
- * - description [textarea]
+ * - text [input]
+ * - date [date]
+ * - country [country]
+ * - number [numeric]
+ * - field [fieldcollections]
+ * - bricks [objectbricks]
+ * - geopoint [geopoint]
  * - image [image]
- * - price [numeric]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'product',
+   'id' => '18',
+   'name' => 'Mega',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1695804355,
+   'modificationDate' => 1699253130,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -63,8 +67,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'name',
-             'title' => 'Name',
+             'name' => 'text',
+             'title' => 'Text',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -92,9 +96,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'name' => 'description',
-             'title' => 'Description',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
+             'name' => 'date',
+             'title' => 'Date',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -110,16 +114,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'maxLength' => NULL,
-             'showCharCount' => false,
-             'excludeFromSearchIndex' => false,
-             'height' => '',
-             'width' => '',
+             'defaultValue' => NULL,
+             'useCurrentDate' => false,
+             'columnType' => 'bigint(20)',
+             'defaultValueGenerator' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Country::__set_state(array(
+             'name' => 'country',
+             'title' => 'Country',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -135,14 +138,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'uploadPath' => '',
+             'defaultValue' => NULL,
+             'optionsProviderClass' => NULL,
+             'optionsProviderData' => NULL,
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
              'width' => '',
-             'height' => '',
+             'restrictTo' => '',
           )),
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'price',
-             'title' => 'Price',
+             'name' => 'number',
+             'title' => 'Number',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -168,6 +176,112 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'decimalPrecision' => NULL,
              'width' => '',
              'defaultValueGenerator' => '',
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
+             'name' => 'field',
+             'title' => 'Field',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'allowedTypes' => 
+            array (
+              0 => 'customCollection',
+            ),
+             'lazyLoading' => true,
+             'maxItems' => NULL,
+             'disallowAddRemove' => false,
+             'disallowReorder' => false,
+             'collapsed' => false,
+             'collapsible' => false,
+             'border' => false,
+          )),
+          5 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+             'name' => 'bricks',
+             'title' => 'Bricks',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'allowedTypes' => 
+            array (
+              0 => 'custom',
+            ),
+             'maxItems' => NULL,
+             'border' => false,
+          )),
+          6 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
+             'name' => 'geopoint',
+             'title' => 'Geopoint',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'lat' => 0.0,
+             'lng' => 0.0,
+             'zoom' => 1,
+             'mapType' => 'roadmap',
+             'height' => 180,
+             'width' => '',
+          )),
+          7 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+             'name' => 'image',
+             'title' => 'Image',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'uploadPath' => '',
+             'width' => '',
+             'height' => '',
           )),
         ),
          'locked' => false,

@@ -1,0 +1,125 @@
+pimcore_custom_reports:
+    definitions:
+        testReport:
+            name: testReport
+            sql: ''
+            dataSourceConfig:
+                -
+                    sql: '*'
+                    from: documents
+                    where: ''
+                    groupby: ''
+                    type: sql
+            columnConfiguration:
+                -
+                    name: id
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-1
+                -
+                    name: parentId
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-2
+                -
+                    name: type
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-3
+                -
+                    name: key
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-4
+                -
+                    name: path
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-5
+                -
+                    name: index
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-6
+                -
+                    name: published
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-7
+                -
+                    name: creationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-8
+                -
+                    name: modificationDate
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-9
+                -
+                    name: userOwner
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-10
+                -
+                    name: userModification
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-11
+                -
+                    name: versionCount
+                    display: true
+                    export: true
+                    order: true
+                    width: ''
+                    label: ''
+                    id: extModel3010-12
+            niceName: 'Test report'
+            group: ''
+            groupIconClass: ''
+            iconClass: ''
+            menuShortcut: true
+            reportClass: ''
+            chartType: ''
+            pieColumn: null
+            pieLabelColumn: null
+            xAxis: null
+            yAxis: {  }
+            modificationDate: 1697454392
+            creationDate: 1697454068
+            shareGlobally: true
+            sharedUserNames: {  }
+            sharedRoleNames: {  }

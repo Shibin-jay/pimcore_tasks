@@ -1,0 +1,9 @@
+<div>
+    {%  for item in items.items %}
+    <div>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.gender }}</p>
+        <p>IsDisabled:{{ item.IsDisabled }}</p>
+    </div>
+    {% endfor %}
+</div>

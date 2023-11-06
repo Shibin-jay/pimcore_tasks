@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Lucida Sans Unicode", Arial;
+    font-size: 14px;
+}
+#logo{
+    width: 200px;
+}
+.navbar{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background: #7D7C7C;
+    align-items: center;
+}
+.navbar .my-menu ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.navbar .my-menu ul li a{
+    color: white;
+    text-decoration: none;
+}

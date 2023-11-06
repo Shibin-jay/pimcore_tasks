@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject;
+use Pimcore\Model\Document\Link;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +16,11 @@ class ContentController extends FrontendController
         return [];
     }
 
-    public function customProductsAction():Response
+    public function customProductsAction(Request $request):Response
     {
-        return  $this->render('content/custom_products.html.twig');
+        $locale = $request->getLocale();
+        $link = Link::getById(15)->getHref();
+        return  $this->render('content/custom_products.html.twig',['link'=>$link, 'locale'=>$locale]);
     }
 
 //    public function passingObjectAction(){

@@ -3,19 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Example</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     {% block stylesheets %} {% endblock %}
 
 </head>
 <body>
-<div id="site">
-    <div id="logo">
-        <a href="http://www.pimcore.com/">
-            <img src="/bundles/pimcoreadmin/img/logo-claim-gray.svg" style="width: 400px;"/>
-        </a>
-        <hr/>
-    </div>
-    {{ block('content') }}
+<header>
+    <nav class="navbar">
+        {# get root node if there is no document defined (for pages which are routed directly through static route) #}
+        {% if not document is defined or not document %}
+            {% set document = pimcore_document(1) %}
+        {% endif %}
+
+        {# get the document which should be used to start in navigation | default home #}
+        {% set navStartNode = document.getProperty('navigationRoot') %}
+        {% if not navStartNode is instanceof('\\Pimcore\\Model\\Document\\Page') %}
+            {% set navStartNode = pimcore_document(1) %}
+        {% endif %}
+
+        {% set mainNavigation = pimcore_build_nav({
+            active: document,
+            root: navStartNode
+        }) %}
+        <div class="logo">
+            <a href="/">
+                {{ pimcore_image("myImage",{
+                    "title": "Drag your image here",
+                    "width": 200,
+                    "height": 27,
+                    "thumbnail": "logo"
+                }) }}
+            </a>
+        </div>
+        <div class="my-menu">3
+
+            {# alternatively, you can use 'default' key to apply class on all depth levels #}
+            {{ pimcore_render_nav(mainNavigation, 'menu', 'renderMenu', {
+                maxDepth: 2,
+                ulClass: {
+                    default: 'nav navbar-nav'
+                }
+            }) }}
+        </div>
+    </nav>
+</header>
+<div class="my-breadcrumbs">
+    <a href="/">{{ 'Home'|trans }}</a> >
+    {{ pimcore_render_nav(mainNavigation, 'breadcrumbs') }}
 </div>
+
+
+{{ block('content') }}
 </body>
 </html>

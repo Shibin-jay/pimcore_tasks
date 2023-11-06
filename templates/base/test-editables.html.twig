@@ -1,0 +1,244 @@
+{% extends 'layout.html.twig' %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/test.css') }}">
+    {% endblock %}
+{% block content %}
+    <div class="date-sec">
+        <h1>post Date:</h1>
+        {{ pimcore_date('myDate', {
+            'format': 'd.m.Y',
+            'outputFormat': '%d.%m.%Y'
+        })
+        }}
+    </div>
+    <div class="relation-sec">
+        <h2>Relation many to one</h2>
+        <div class="product-sec">
+            {% if editmode %}
+                {{ pimcore_relation("product") }}
+            {% else %}
+                {% set product = pimcore_relation("product").element %}
+                {% if product %}
+                    <p><strong>{{ product.name }}</strong></p>
+                    <p>{{ product.description }}</p>
+                    <h4>longitude:{{ product.location.longitude }}</h4>
+                    <h4>latitude:{{ product.location.latitude }}</h4>
+
+{#                    {{ dump(product) }}#}
+                    <div class="image-sec">
+                        <img src="{{ product.image }}">
+                    </div>
+                    <p>price: {{ product.price }}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="relation-many-to-many">
+        <p>{{ "asset elements" | trans }}:</p>
+        {% if editmode %}
+            {{ pimcore_relations("objectPaths", {
+                "types": ["asset"],
+                "subtypes": {
+                    "asset": ["video","image"],
+                },
+                "classes": ["person"]
+            }) }}
+        {% else %}
+            <ul>
+                {% for element in pimcore_relations("objectPaths") %}
+                    <li>{{ element.getType() }}</li>
+{#                    {{ dump(element) }}#}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="relation-many-to-many">
+        <p>{{ "object elements" | trans }}:</p>
+        {% if editmode %}
+            {{ pimcore_relations("objectPaths2", {
+                "types": ["object"],
+                "classes": ["person2"]
+            }) }}
+        {% else %}
+            <ul>
+                {% for element in pimcore_relations("objectPaths2") %}
+                    <li>{{ element.getType() }}</li>
+                    {#                    {{ dump(element) }}#}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div>
+        <h3>{{ "our partners" | trans }}</h3>
+        <ul>
+            {% for i in pimcore_block('linkblock').iterator %}
+                <li>{{ pimcore_link('myLink', {'class': "special-link-class"}) }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <form class="query-form">
+        <h2>Query Form</h2>
+        <label>Dated: {{ pimcore_date('formDate', {
+                'format': 'd.m.Y',
+                'outputFormat': '%d.%m.%Y'
+            })
+            }}
+        </label>
+        <div>
+            <label>Room vacant locations:</label>
+            {% if editmode %}
+                {{ pimcore_multiselect('location', {
+                    'width': 200,
+                    'height': 100,
+                    'store': [
+                        ['kerala', 'kerala'],
+                        ['banglore', 'banglore'],
+                        ['kolkatta', 'kolkatta'],
+                    ]
+                }) }}
+            {% else %}
+                <p>{{ 'Rooms are vacant at:' | trans }}
+                    {% for categoryKey in pimcore_multiselect('location').getData %}
+                        <span>
+                            {{ categoryKey | trans }}
+                        </span>
+                    {% endfor %}
+                    location(s)
+                </p>
+            {% endif %}
+        </div>
+        <label>Number of peoples max allowed in one room:</label>
+        {{ pimcore_numeric('noPeople',{
+            "width" : 300,
+            "minValue" : 0,
+            "maxValue" : 10,
+            "decimalPrecision" : 0
+        })
+        }}
+{#        <p>#}
+{#            {{ pimcore_numeric('noPeople').getData() }}#}
+{#        </p>#}
+        <div class="select-editable">
+            <label></label>
+            {% if editmode %}
+                <p>reg fee validity:</p>
+                {{ pimcore_select("valid_for", {
+                    "store": [
+                        ["one-month", "One month"],
+                        ["three-months", "Three months"],
+                        ["unlimited", "Unlimited"]
+                    ],
+                    "defaultValue" : "unlimited"
+                }) }}
+            {% else %}
+                <p>
+                    <h3>Note</h3>
+{#                    {%  if pimcore_select("valid_for").isEmpty() %}#}
+                        {{ "your one time reg fee is valid for" | trans }}:{{ pimcore_select("valid_for").getData() | trans  }}
+{#                    {%  endif %}#}
+                </p>
+            {% endif %}
+
+        </div>
+    </form>
+    <div>
+        <h1>Reviews</h1>
+        {{ pimcore_embed("socialWidgets", { "width": 540 }) }}
+        {{ pimcore_embed("socialWidgets2", { "width": 540 }) }}
+        {{ pimcore_embed("socialWidgets3", { "width": 540 }) }}
+    </div>
+    <div>
+        <h3>{{ "Regulations" | trans }}</h3>
+        <ul>
+            {% for i in pimcore_block('pdfBlock').iterator %}
+                {{ pimcore_pdf("myPdf", {"width": 780}) }}
+            {% endfor %}
+        </ul>
+    </div>
+{#    <div class="regulations">#}
+{#    </div>#}
+    <div class="table">
+        <h1>Rent Table</h1>
+        {% if editmode %}
+            {{ pimcore_table("productProperties", {
+                "width": 700,
+                "height": 800,
+                "defaults": {
+                    "cols": 2,
+                    "rows": 3,
+                }
+            })}}
+        {% else %}
+            {% set data = pimcore_table("productProperties").getData() %}
+            {{ dump(data) }}
+            <table>
+                {% for i in range(0,2) %}
+                    <tr>
+                        {% for y in range(0,2) %}
+                            <td>{{ data[i][y] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+    <br>
+    <div class="vid-sec">
+        <section id="campaign_video">
+            {{ pimcore_video('campaignVideo', {
+                width: 700,
+                height: 400,
+                youtube: {
+                    autoplay: true,
+                    modestbranding: true
+                },
+                allowedTypes: ['asset', 'youtube'],
+                vimeo: {
+                    autoplay: true,
+                    loop: true
+                }
+            })
+            }}
+        </section>
+    </div>
+    <div>
+        <h1>notice</h1>
+        <p class="product-description">
+            {{ pimcore_textarea("product_description",{
+                "nl2br": true,
+                "height": 300,
+                "placeholder": "Product Description"
+            }) }}
+        </p>
+
+
+    </div>
+{#    <div class="scedule-sec">#}
+{#        {% for i in pimcore_scheduledblock('scheduleBlock').iterator %}#}
+{#            <h2>{{ pimcore_input('blockinput') }}</h2>#}
+{#            <p>{{ pimcore_input('blockinput') }}</p>#}
+{#        {% endfor %}#}
+{#    </div>#}
+    <div class="custom-brick">
+        {{ pimcore_areablock("myAreablock") }}
+    </div>
+    <div class="selective">
+        {{ pimcore_areablock("content", {
+            "allowed": ["pdf","trip"],
+            "sorting": ["trip","pdf"],
+            "limits": {
+                "pdf": 1,
+                "trip": 2
+            },
+            "limit": 5
+        })
+        }}
+    </div>
+    <div class="snippets">
+        <h1>snippets</h1>
+        {{ pimcore_snippet("mySnippet", {"width": 1000, "height": 100, cache: true}) }}
+    </div>
+{#    <div class="my-sidebar-menu">#}
+{#        {{ pimcore_nav_renderer('menu').renderMenu(mainNavigation)| raw }}#}
+{#    </div>#}
+{% endblock %}

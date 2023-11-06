@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                f4237a6c-62e4-4451-9e83-827fec29da87:
+                    name: testValue
+                    description: any
+                    key: test_key
+                    type: text
+                    data: 'default value'
+                    config: ''
+                    ctype: document
+                    inheritable: false
+                    creationDate: 1697189055
+                    modificationDate: 1697189203

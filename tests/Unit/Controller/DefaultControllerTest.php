@@ -41,7 +41,7 @@ class DefaultControllerTest extends Unit
     {
         $this->twig->method('render')->will(
             $this->returnValueMap([
-                // Simulate rendering of default template.
+                // Simulate rendering of default templates.
                 ['default/default.html.twig', [], 'At pimcore we love writing tests! ❤️TDD!'],
             ])
         );

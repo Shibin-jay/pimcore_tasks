@@ -30,6 +30,26 @@ parameters:
     #pimcore_executable_dot: /usr/bin/dot
 
 services:
+    App\Service\CustomLogService:
+        arguments:
+            $customLogLogger: '@monolog.logger.custom_log'
+
+
+
+    App\EventListener\SampleListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.document.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.asset.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.document.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.dataobject.preDelete, method: onPreDelete}
+            - { name: kernel.event_listener, event: pimcore.asset.preAdd, method: onPreAdd}
+            - { name: kernel.event_listener, event: pimcore.document.preAdd, method: onPreAdd}
+            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: onPreAdd}
+
+
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
@@ -39,6 +59,7 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: false
+
     #
     # CONTROLLERS
     #
@@ -59,6 +80,10 @@ services:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
 
+    customCommandBundle\Command\CsvImportObjectsCommand:
+        tags: [ 'console.command' ]
+
+
 
 
     # Example custom templating helper
@@ -73,3 +98,30 @@ services:
     # App\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+# a service.yaml file defining services
+
+    App\EventListener\AdminStyleListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.admin.resolve.elementAdminStyle, method: onResolveElementAdminStyle }
+pimcore_admin:
+    documents:
+        notes_events:
+            types:
+                - ""
+                - "content"
+                - "seo"
+                - "custom type"
+    assets:
+        notes_events:
+            types:
+                - ""
+                - "content"
+                - "licese renewal"
+                - "some other type"
+    objects:
+        notes_events:
+            types:
+                - ""
+                - "manual data change"
+                - "some other type"
+
